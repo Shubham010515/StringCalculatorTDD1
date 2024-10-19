@@ -19,4 +19,25 @@ public class StringCalculator {
             return addition(numList);
         }
     }
+
+    private int addition(String[] numbers) {
+        StringBuilder negativeString = new StringBuilder();
+        int sumation = 0;
+        for (String num : numbers) {
+            if (Integer.parseInt(num) < 0) {
+                if (negativeString.toString().equals(""))
+                    negativeString = new StringBuilder(num);
+                else
+                    negativeString.append(",").append(num);
+            }
+            if (Integer.parseInt(num) < 1000)
+                sumation += Integer.parseInt(num);
+        }
+
+        if (!negativeString.toString().equals("")) {
+            throw new IllegalArgumentException("Negative numbers are not allowed " + negativeString);
+        }
+
+        return sumation;
+    }
 }
