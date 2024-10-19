@@ -24,7 +24,7 @@ public class StringCalculatorTest {
     @Test
     @DisplayName("Testing only one number")
     public void testOnlyOneNumber() {
-        assertEquals(1, stringCalculator.add("9"));
+        assertEquals(9, stringCalculator.add("9"));
     }
 
     @Test
@@ -39,19 +39,19 @@ public class StringCalculatorTest {
         try {
             stringCalculator.add("-3,9");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "Negatives numbers are not allowed: -3");
+            assertEquals(e.getMessage(), "Negative numbers are not allowed -3");
         }
         try {
             stringCalculator.add("1,-8,-4,7");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "Negatives numbers are not allowed: -8,-4");
+            assertEquals(e.getMessage(), "Negative numbers are not allowed -8,-4");
         }
     }
 
     @Test
     @DisplayName("Testing with  Multiple Numbers")
     public void testAddingMultipleNum() {
-        assertEquals(3, stringCalculator.add("5,8"));
+        assertEquals(13, stringCalculator.add("5,8"));
     }
 
     @Test
@@ -69,6 +69,6 @@ public class StringCalculatorTest {
     @Test
     @DisplayName("Testing with New Line")
     public void testingWithNewLine() {
-        assertEquals(10, stringCalculator.add("8\n1,5\n2"));
+        assertEquals(16, stringCalculator.add("8\n1,5\n2"));
     }
 }
