@@ -55,6 +55,18 @@ public class StringCalculatorTest {
     }
 
     @Test
+    @DisplayName("Testing with Other Delimiter")
+    public void testingWithOtherDelimiter() {
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+
+    @Test
+    @DisplayName("Testing With  Over Thousand")
+    public void testWithOverThousand() {
+        assertEquals(10, stringCalculator.add("1000,10"));
+    }
+
+    @Test
     @DisplayName("Testing with New Line")
     public void testingWithNewLine() {
         assertEquals(10, stringCalculator.add("8\n1,5\n2"));
