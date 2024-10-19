@@ -26,4 +26,10 @@ public class StringCalculatorTest {
     public void testOnlyOneNumber() {
         assertEquals(1, stringCalculator.add("1"));
     }
+
+    @Test
+    @DisplayName("Test with empty string")
+    public void testWithEmptyString() {
+        assertEquals(0, stringCalculator.add(""));
+    }
 }
