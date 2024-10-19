@@ -47,4 +47,16 @@ public class StringCalculatorTest {
             assertEquals(e.getMessage(), "Negatives numbers are not allowed: -8,-4");
         }
     }
+
+    @Test
+    @DisplayName("Testing with  Multiple Numbers")
+    public void testAddingMultipleNum() {
+        assertEquals(3, stringCalculator.add("5,8"));
+    }
+
+    @Test
+    @DisplayName("Testing with New Line")
+    public void testingWithNewLine() {
+        assertEquals(10, stringCalculator.add("8\n1,5\n2"));
+    }
 }
