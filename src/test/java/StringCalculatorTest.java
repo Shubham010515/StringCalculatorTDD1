@@ -20,4 +20,10 @@ public class StringCalculatorTest {
     public void destroy() {
         stringCalculator = null;
     }
+
+    @Test
+    @DisplayName("Testing only one number")
+    public void testOnlyOneNumber() {
+        assertEquals(1, stringCalculator.add("1"));
+    }
 }
